@@ -1,7 +1,5 @@
 import React from "react";
 import { Table, Button, message } from "antd";
-// import { getUser } from "../utils/apiCallHandler";
-// import {EditTwoTone, DeleteTwoTone} from '@ant-design/icons';
 
 class UserInfoTable extends React.Component {
   constructor(props) {
@@ -25,46 +23,19 @@ class UserInfoTable extends React.Component {
       },
     ];
 
-    // this.data = [];
-
     this.state = {
-    //   filteredData:[],
       selectedRowKeys: [], // Check here to configure the default column
-    //   loading: false,
     };
   }
 
-  // async componentDidMount() {
-  //   let data = await getUser();
-  //   for(let i = 0; i < data.length; i++){
-  //     this.data.push({
-  //       key:i,
-  //       ...data[i],
-  //       action: <>
-  //                 <EditTwoTone  style={{marginRight:"10px"}} />   
-  //                 <DeleteTwoTone twoToneColor="red" onClick={()=>this.handleDelete(data[i].id)}/>
-  //               </>
-  //     })
-  //   }
-  //   this.setState({
-  //     filteredData:this.data,
-  //     loading: true,
-  //   },()=>console.log(this.state.filteredData));
-  // }
-
   handleDelete = (id) => {
-    // this.data.splice(id,1);
-    // this.setState({
-    //   filteredData:this.data
-    // })
+    
     this.props.deleteOne();
     message.info('All selected users deleted successfully!');
-    // console.log(this.props.data);
-    // console.log(id);
+   
   };
 
   handleDeleteSelected = (selectedRowKeys) => {
-    //console.log(selectedRowKeys);
     this.props.deleteSelected(selectedRowKeys);
     this.setState({
       selectedRowKeys:[],
@@ -121,7 +92,6 @@ class UserInfoTable extends React.Component {
           <Table
             rowSelection={rowSelection}
             columns={this.columns}
-            // dataSource={this.state.filteredData}
             dataSource={this.props.data}
           />
 

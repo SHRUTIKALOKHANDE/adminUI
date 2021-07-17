@@ -12,7 +12,6 @@ class Home extends React.Component{
 
         this.state = {
         filteredData:[],
-        // selectedRowKeys: [], // Check here to configure the default column
         loading: false,
         isDelete:false,
         };
@@ -46,7 +45,6 @@ class Home extends React.Component{
     handleDeleteSelected = (selectedRowKeys) => {
         for(let i = 0; i < selectedRowKeys.length; i++){
             this.data.splice(selectedRowKeys[i],1);
-            // this.data{()}
         }
         let d =this.data;
         for(let i = 0; i<this.data.length; i++){
