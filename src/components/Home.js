@@ -64,10 +64,14 @@ class Home extends React.Component{
     render(){
         return(            
         <div className='container'>
+            <div className='search'>
             <Search data={this.state.filteredData}/>
+            </div>
+            <div className='table'>
             {this.state.isDelete || this.state.loading ? (
                 <UserInfoTable data={this.state.filteredData} deleteSelected={this.handleDeleteSelected}/>
             ) : ('') }
+            </div>
         </div>
             
         )
